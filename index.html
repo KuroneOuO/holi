@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body id="fondo">
+        <p id="textouno">un texto</p>
+        <p id="textodos">un texto</p>
+        <p id="textotres">un texto</p>
+        <button onclick="cambio()">Color</button>
+        <button onclick="textos()">Textos</button>
+        <input type="number" id="numero">
+        <button onclick="VerificarN()">Número</button>
+        <p id="resultado"></p>
+        <p id="datos"></p>
+        <button onclick="miobjeto()">objeto</button>
+        <button onclick="lista()">milista</button>
+        <ul id="la-lista" ></ul>
+    </body>
+    <style>
+        .rojo {
+            background: red;
+        }
+    </style>
+    
+    <script>
+        // Cambia el color de fondo
+        function cambio() {
+            document.getElementById("fondo").classList.add("rojo");
+        }
+
+        // Cambia el texto de los párrafos
+        function textos() {
+            document.getElementById("textouno").innerHTML = "cambio";
+            document.getElementById("textodos").innerHTML = "cambio";
+            document.getElementById("textotres").innerHTML = "cambio";
+        }
+
+        // Verifica si el número ingresado es mayor que 10
+        function VerificarN() {
+            const Numero = document.getElementById("numero").value;
+            if (Numero > 10) {
+                document.getElementById("resultado").innerHTML = "Es mayor que 10";
+            }
+        }
+        
+            var usuario ={
+                nombre: "daniel",
+                edad: 33,
+                correo: "daniel@hola.com"
+            }
+        function miobjeto(){
+            document.getElementById("datos").innerHTML=`nombre: ${usuario.nombre}
+            edad: ${usuario.edad} correo: ${usuario.correo}`
+        }
+        function lista(){
+            var notas =["miguel","daniel","santi", "paula", usuario.nombre];
+            for (var i = 0; i<notas.length;i++){
+                document.getElementById("la-lista").innerHTML+=`<li>${notas[i]}
+                    </li>`
+            }
+        }
+    </script>
+</html>
